@@ -41,7 +41,7 @@ func main() {
 func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string, args []string) ([]byte, error) {
 	if len(args) != 1 {
 		fmt.Println("############################################################################")
-		return nil, errors.New("Incorrect number of arguments. Expecting 1, got %v instead!", args)
+		return nil, fmt.Errorf("Incorrect number of arguments. Expecting 1, got %v instead!", args)
 	}
 
 	return nil, nil
